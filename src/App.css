@@ -1,25 +1,116 @@
-.app {
-  height: 100vh;
-  width: 100vw;
-  transition: background-color 1s ease-in;
+*{
+  background-color: #90c4fd;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Raleway";
 }
 
-.app__header,
-.app__main {
-  width: 100%;
+header{
+  padding: 25px;
+  background-color: #5390e6;
+  display: flex;
+}
+input{
+
+  border: none;
+  background-color:  #5390e6;
+  border-bottom: 1px solid gray;
+  color: white;
+  font-size: 25px;
+}
+
+input:focus{
+  outline: none;
+}
+
+
+input::placeholder{
+  color: white;
+  font-size: larger;
+  opacity: 0.5;
+}
+
+button{
+  margin-left: 30px;
+  padding: 15px 35px;
+  background-color: #4864ad;
+  font-size: 25px;
+  border: none;
+}
+
+.main-section{
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  font-family: "Raleway", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  line-height: 70px;
+  word-spacing: 10px;
+  margin-bottom: 100px;
+}
+.main-section h1{
+  color: white;
+}
+.times{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 30px;
 }
 
-/*  Search bar */
-
-/* Current weather */
-
-div {
-  border: 5px solid red;
+.image1{
+  width: 300px;
+  margin-top: 50px;
 }
+
+.image-icon{
+  width:10%
+}
+.images{
+  display: flex;
+  justify-content: space-around;
+}
+.temperatures{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  align-items: center;
+}
+footer{
+  margin-left: 10%;
+  margin-right: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.main-section h1{
+  font-size: 28px;
+}
+.Humidity-pressure{
+  display:flex;
+  text-indent: 18px;
+}
+.Humidity{
+  display: flex;
+  justify-content: space-between;
+}
+.pressure{
+  display: flex;
+}
+
+.Humidity h4, .pressure h4{
+  font-weight: 50;
+}
+.temperature{
+  display: flex;
+  text-indent: 15px;
+}
+.temperature h2:nth-child(2){
+font-weight: 50;
+}
+
+
+
+
+
+
