@@ -11,21 +11,22 @@ import drizzle from "..//img/weather-icons/drizzle.svg";
 import fog from "..//img/weather-icons/fog.svg";
 
 
-const Main = () => {
+const Main = (props) => {
+  
   return (
     <div>
         <main className="main-section">
     <img className="image1"  src={mostlycloudy} alt="weather icon" />
     <h1>Overcast Clouds</h1>
     <div className="temperature">
-    <h2>Temperature <span>10º to 11º C</span></h2>
+    <h2>Temperature <span>{props.data.list[1].main.temp_min} °C to {props.data.list[1].main.temp_max} °C</span></h2>
     </div>
   <div className="Humidity-pressure">
     <div className="Humidity">
-    <h2> Humidity  <span>78%</span></h2>
+    <h2> Humidity  <span>{props.data.list[1].main.humidity}</span></h2>
     </div>
     <div className="pressure">
-     <h3> Pressure <span>1008.48</span></h3>
+     <h3> Pressure <span>{props.data.list[1].main.pressure}</span></h3>
     </div>
   </div>
    </main>

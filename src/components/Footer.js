@@ -10,7 +10,7 @@ import cloudy from "..//img/weather-icons/cloudy.svg";
 import drizzle from "..//img/weather-icons/drizzle.svg";
 import fog from "..//img/weather-icons/fog.svg";
 
-const Footer = () => {
+const Footer = (props) => {
   return (
     <div>
         <footer>
@@ -33,13 +33,13 @@ const Footer = () => {
      <img  className="image-icon 7"   src= {mostlycloudy}  alt="" />
    </div>
    <div className="temperatures">
-     <div className="temperature 1"> 8º C</div>
-     <div className="temperature 2"> 9º C</div>
-     <div className="temperature 3"> 14º C</div>
-     <div className="temperature 4"> 17º C</div>
-     <div className="temperature 5"> 18º C</div>
-     <div className="temperature 6"> 16º C</div>
-     <div className="temperature 7"> 13º C</div>
+     <div className="temperature 1"> {props.data.list[1].main.temp} °C</div>
+     <div className="temperature 2"> {props.data.list[2].main.temp} °C</div>
+     <div className="temperature 3"> {props.data.list[3].main.temp} °C</div>
+     <div className="temperature 4"> {props.data.list[4].main.temp} °C</div>
+     <div className="temperature 5"> {props.data.list[5].main.temp} °C</div>
+     <div className="temperature 6"> {props.data.list[6].main.temp} °C</div>
+     <div className="temperature 7"> {props.data.list[7].main.temp} °C</div>
    </div>
  </footer>
  </div>

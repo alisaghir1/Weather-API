@@ -5,34 +5,17 @@ import { useState,useEffect } from "react";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
-
-// //will store data coming from api
-// const [data, setData] = useState([])
-// //will store search info
-
-
-// //will handle input change from input
-// }
-// useEffect(() => {
-  // //fetch data api goes here
-  
-  
-  // }, [search])
-  
-  // const [search, setSearch] = useState("")
-  // handleInputChange=(e)=>{
-  //   setSearch(e.target.value)
-  // }
+import FakeWeatherData from "./fakeWeatherData.json";
   
   
   
   function App() {
-    
+    const [data, setData] = useState(null);
     return (
       <div className="app">
       <Header />
-      <Main />
-      <Footer />
+      <Main data={fakeWeatherData}/>
+      <Footer data={fakeWeatherData}/>
       </div>
     );
   }
