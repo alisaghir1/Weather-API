@@ -1,3 +1,5 @@
+
+//-------------imports--------------------------------
 import React from 'react';
 import mostlycloudy from "../img/weather-icons/mostlycloudy.svg";
 import clear from "../img/weather-icons/clear.svg";
@@ -10,8 +12,38 @@ import cloudy from "..//img/weather-icons/cloudy.svg";
 import drizzle from "..//img/weather-icons/drizzle.svg";
 import fog from "..//img/weather-icons/fog.svg";
 
+//footer function using react proprs
 const Footer = (props) => {
+  //conditional function to set icons according to weather status
+  const getIcon = weatherName =>{
+    switch(weatherName){
+      case "Mostly Cloudy":
+        return mostlycloudy;
+      case "Clear":
+        return clear;
+      case "Partly Cloudy":
+        return partlycloudy;
+      case "Rain":
+        return rain;
+      case "Snow":
+        return snow;
+      case "Unknown":
+        return unknown;
+      case "Storm":
+        return storm;
+      case "Clouds":
+        return cloudy;
+      case "Drizzle":
+        return drizzle;
+      case "Fog":
+        return fog;
+      default:
+        return unknown;
+    }
+  }
+  
   return (
+    //html elemets of footer
     <div>
         <footer>
     <div className="times">
@@ -24,13 +56,11 @@ const Footer = (props) => {
      <div className="time 7">21:00</div>
     </div>
     <div className="images">
-     <img  className="image-icon 1"   src={mostlycloudy}   alt="" />
-     <img  className="image-icon 2"   src={mostlycloudy}   alt="" />
-     <img  className="image-icon 3"   src={clear}   alt="" />
-     <img  className="image-icon 4"   src={clear}   alt="" />
-     <img  className="image-icon 5"   src= {clear}  alt="" />
-     <img  className="image-icon 6"   src= {clear}  alt="" />
-     <img  className="image-icon 7"   src= {mostlycloudy}  alt="" />
+      {
+        [1,2,3,4,5,6,7].map((indexNumber)=>{
+          return <img className={"image-icon " + indexNumber} src={getIcon(props.data.list[indexNumber].weather[0].main)} alt="" />
+        })
+      }
    </div>
    <div className="temperatures">
      <div className="temperature 1"> {props.data.list[1].main.temp} °C</div>
